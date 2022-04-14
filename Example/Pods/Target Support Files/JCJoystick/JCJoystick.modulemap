@@ -1,0 +1,6 @@
+framework module JCJoystick {
+  umbrella header "JCJoystick-umbrella.h"
+
+  export *
+  module * { export * }
+}
