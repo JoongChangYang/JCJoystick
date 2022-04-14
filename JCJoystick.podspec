@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JCJoystick'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of JCJoystick.'
+  s.version          = '1.0.0'
+  s.summary          = 'View with joystick control.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
