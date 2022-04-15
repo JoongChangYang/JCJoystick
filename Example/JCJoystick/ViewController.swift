@@ -13,8 +13,6 @@ final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let test = JCTest()
-        test.test()
     }
 
     override func didReceiveMemoryWarning() {
