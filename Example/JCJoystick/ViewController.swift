@@ -22,3 +22,20 @@ final class ViewController: UIViewController {
 
 }
 
+final class JotstickView: JCJoystickView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    override var boundaryView: UIView {
+        return UIView()
+    }
+    
+    override var thumbView: UIView {
+        return UIView()
+    }
+}
