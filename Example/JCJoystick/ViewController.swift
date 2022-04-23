@@ -11,13 +11,25 @@ import JCJoystick
 
 final class ViewController: UIViewController {
 
+    @IBOutlet private weak var joystickView: JCJoystickView!
+    @IBOutlet private weak var textView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print(#function)
+    }
+    
+    private func setupUI() {
+        self.textView.backgroundColor = .white
+        self.textView.layer.cornerRadius = 8
+        self.textView.layer.borderWidth = 2
+        self.textView.layer.borderColor = UIColor.lightGray.cgColor
     }
 
 }
@@ -31,11 +43,11 @@ final class JotstickView: JCJoystickView {
         super.init(coder: coder)
     }
     
-    override var boundaryView: UIView {
-        return UIView()
+    override var boundaryView: JCJoystickBoundaryView {
+        return .init()
     }
     
-    override var thumbView: UIView {
-        return UIView()
+    override var thumbView: JCCircleView {
+        return .init()
     }
 }

@@ -23,9 +23,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ga2-EA-u7Q" customClass="JCJoystickView" customModule="JCJoystick">
                                 <rect key="frame" x="48" y="76" width="294" height="325.66666666666669"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2BV-JN-YZh">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZSD-JM-3XJ">
                                 <rect key="frame" x="16" y="433.66666666666674" width="358" height="376.33333333333326"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -34,15 +34,19 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ga2-EA-u7Q" secondAttribute="trailing" constant="32" id="Bkz-0x-QIQ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZSD-JM-3XJ" secondAttribute="bottom" id="Em8-cC-bHc"/>
                             <constraint firstAttribute="centerY" secondItem="ga2-EA-u7Q" secondAttribute="bottom" constant="20.5" id="GGe-Zy-P4P"/>
                             <constraint firstItem="ga2-EA-u7Q" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="Zef-Pk-9Wh"/>
-                            <constraint firstItem="2BV-JN-YZh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bbQ-lZ-0by"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZSD-JM-3XJ" secondAttribute="trailing" id="a5N-GF-fit"/>
                             <constraint firstItem="ga2-EA-u7Q" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="32" id="eoA-on-2p8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2BV-JN-YZh" secondAttribute="trailing" id="g3H-l4-nLM"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="2BV-JN-YZh" secondAttribute="bottom" id="oyn-Ax-q77"/>
-                            <constraint firstItem="2BV-JN-YZh" firstAttribute="top" secondItem="ga2-EA-u7Q" secondAttribute="bottom" constant="32" id="y0P-tJ-vHs"/>
+                            <constraint firstItem="ZSD-JM-3XJ" firstAttribute="top" secondItem="ga2-EA-u7Q" secondAttribute="bottom" constant="32" id="lbZ-Ps-caz"/>
+                            <constraint firstItem="ZSD-JM-3XJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="pZ5-TS-np5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="joystickView" destination="ga2-EA-u7Q" id="5GV-aU-jkN"/>
+                        <outlet property="textView" destination="ZSD-JM-3XJ" id="jrB-h5-kGg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,9 +56,6 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

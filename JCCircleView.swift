@@ -1,5 +1,5 @@
 //
-//  JCJoystickThumbView.swift
+//  JCCircleView.swift
 //  JCJoystick
 //
 //  Created by YJC on 2022/04/22.
@@ -7,13 +7,16 @@
 
 import UIKit
 
-open class JCJoystickThumbView: UIView {
+open class JCCircleView: UIView {
     
     private let imageView = UIImageView()
     
     public var image: UIImage? {
         get { self.imageView.image }
-        set { self.imageView.image = newValue }
+        set {
+            self.imageView.image = newValue
+            self.setupCornerRadius()
+        }
     }
     
     public override init(frame: CGRect) {
@@ -30,10 +33,7 @@ open class JCJoystickThumbView: UIView {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        print("\(type(of: self)): \(self.frame)")
-        guard self.image == nil else { return }
-        let radius = min(self.bounds.width, self.bounds.height) / 2
-        self.layer.cornerRadius = radius
+        self.setupCornerRadius()
     }
     
     private func setupAttribute() {
@@ -50,4 +50,18 @@ open class JCJoystickThumbView: UIView {
          self.imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)].forEach { $0.isActive = true }
     }
     
+    private func setupCornerRadius() {
+        let radius = self.image == nil ? min(self.bounds.width, self.bounds.height) / 2: 0
+        self.layer.cornerRadius = radius
+    }
+}
+
+extension JCCircleView {
+    public var radius: CGFloat {
+        return min(self.bounds.width, self.bounds.height) / 2
+    }
+    
+    public var centerPoint: CGPoint {
+        return CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
+    }
 }
