@@ -43,15 +43,15 @@ open class JCJoystickView: UIView {
     }
     
     open func beganDrag(location: CGPoint) {
-        self.moveThumbView(location: location)
+        self.confirmThumbPoint(location: location)
     }
     
     open func dragging(location: CGPoint) {
-        self.moveThumbView(location: location)
+        self.confirmThumbPoint(location: location)
     }
     
     open func endDrag() {
-        self.thumbView.center = self.boundaryView.centerPoint
+        self.confirmThumbPoint(location: self.boundaryView.centerPoint)
     }
 }
 
@@ -104,23 +104,36 @@ extension JCJoystickView {
          self.thumbView.heightAnchor.constraint(equalTo: self.thumbView.widthAnchor)].forEach { $0.isActive = true }
     }
     
-    private func moveThumbView(location: CGPoint) {
-        let currentDistance = self.straightDistance(center: self.boundaryView.centerPoint, location: location)
+    private func confirmThumbPoint(location: CGPoint) {
+        let center = self.boundaryView.centerPoint
+        let maximumRadius = self.maximumRadius
+        let currentDistance = self.straightDistance(center: center, location: location)
+        let radian = self.radian(center: center, location: location)
         
-        if self.maximumRadius >= currentDistance {
+        if maximumRadius > currentDistance {
             self.thumbView.center = location
         } else {
-            
+            self.thumbView.center = self.maximumPoint(center: center, radius: maximumRadius, radian: radian)
         }
+        
+        print("radian: \(radian)")
+        print("degree: \(radian * (180 / .pi))")
     }
     
-    private func radian() {
-        
+    private func maximumPoint(center: CGPoint, radius: CGFloat, radian: CGFloat) -> CGPoint {
+        let x = center.x + (radius * cos(radian))
+        let y = center.y + (radius * sin(radian))
+        return CGPoint(x: x, y: y)
+    }
+    
+    private func radian(center: CGPoint, location: CGPoint) -> CGFloat {
+        let gap = self.gap(center: center, location: location)
+        return atan2(gap.height, gap.width)
     }
     
     private func gap(center: CGPoint, location: CGPoint) -> CGSize {
-        let horizontal = center.x - location.x
-        let vertical = center.y - location.y
+        let horizontal = location.x - center.x
+        let vertical = location.y - center.y
         return CGSize(width: horizontal, height: vertical)
     }
     
