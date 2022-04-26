@@ -11,9 +11,12 @@ import JCJoystick
 
 final class ViewController: UIViewController {
 
-    @IBOutlet private weak var joystickView: JCJoystickView!
-    @IBOutlet private weak var textView: UITextView!
+    private var angleValueType: JCAngleType = .degree {
+        didSet { self.joystickView.angleValueType = self.angleValueType }
+    }
     
+    @IBOutlet private weak var logLabel: UILabel!
+    @IBOutlet private weak var joystickView: JCJoystickView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,28 +29,29 @@ final class ViewController: UIViewController {
     }
     
     private func setupUI() {
-        self.textView.backgroundColor = .white
-        self.textView.layer.cornerRadius = 8
-        self.textView.layer.borderWidth = 2
-        self.textView.layer.borderColor = UIColor.lightGray.cgColor
+        self.joystickView.delegate = self
+        self.log(value: .zero)
     }
 
+    private func log(value: JCJoystickValue) {
+        var text: String
+        
+        switch self.angleValueType {
+        case .degree:
+            text = "degree: \(value.angle)"
+        case .radian:
+            text = "radian: \(value.angle)"
+        }
+        
+        text += "\nmoveMentRange: \(value.movementRange)"
+        
+        self.logLabel.text = text
+    }
 }
 
-final class JotstickView: JCJoystickView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    override var boundaryView: JCJoystickBoundaryView {
-        return .init()
-    }
-    
-    override var thumbView: JCCircleView {
-        return .init()
+extension ViewController: JCJoystickViewDelegate {
+    func joystickView(joystickView: JCJoystickView, value: JCJoystickValue) {
+        print(value)
+        self.log(value: value)
     }
 }

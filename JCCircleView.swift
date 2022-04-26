@@ -9,15 +9,7 @@ import UIKit
 
 open class JCCircleView: UIView {
     
-    private let imageView = UIImageView()
-    
-    public var image: UIImage? {
-        get { self.imageView.image }
-        set {
-            self.imageView.image = newValue
-            self.setupCornerRadius()
-        }
-    }
+    private let _imageView = UIImageView()
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,7 +43,7 @@ open class JCCircleView: UIView {
     }
     
     private func setupCornerRadius() {
-        let radius = self.image == nil ? min(self.bounds.width, self.bounds.height) / 2: 0
+        let radius = min(self.bounds.width, self.bounds.height) / 2
         self.layer.cornerRadius = radius
     }
 }
@@ -63,5 +55,14 @@ extension JCCircleView {
     
     public var centerPoint: CGPoint {
         return CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
+    }
+    
+    public var image: UIImage? {
+        get { self.imageView.image }
+        set { self.imageView.image = newValue }
+    }
+    
+    public var imageView: UIImageView {
+        return self._imageView
     }
 }

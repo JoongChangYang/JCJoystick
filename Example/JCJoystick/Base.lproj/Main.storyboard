@@ -20,42 +20,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ga2-EA-u7Q" customClass="JCJoystickView" customModule="JCJoystick">
-                                <rect key="frame" x="48" y="76" width="294" height="325.66666666666669"/>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZSD-JM-3XJ">
-                                <rect key="frame" x="16" y="433.66666666666674" width="358" height="376.33333333333326"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4BZ-nj-JSg">
+                                <rect key="frame" x="0.0" y="43.999999999999972" width="390" height="472.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msn-sP-y6h">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdQ-IX-QLW">
+                                        <rect key="frame" x="0.0" y="36.333333333333314" width="390" height="390"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ga2-EA-u7Q" customClass="JCJoystickView" customModule="JCJoystick">
+                                                <rect key="frame" x="60" y="60" width="270" height="270"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ga2-EA-u7Q" secondAttribute="height" id="hSJ-5o-mpB"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ga2-EA-u7Q" secondAttribute="trailing" constant="60" id="7cB-aH-iRY"/>
+                                            <constraint firstItem="ga2-EA-u7Q" firstAttribute="leading" secondItem="xdQ-IX-QLW" secondAttribute="leading" constant="60" id="7u3-qb-uaJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="ga2-EA-u7Q" secondAttribute="bottom" constant="60" id="Iuh-lX-1TQ"/>
+                                            <constraint firstItem="ga2-EA-u7Q" firstAttribute="top" secondItem="xdQ-IX-QLW" secondAttribute="top" constant="60" id="wK1-d0-A8M"/>
+                                        </constraints>
+                                    </view>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eVA-K8-RKc">
+                                        <rect key="frame" x="-2" y="442.33333333333331" width="394" height="31"/>
+                                    </slider>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ga2-EA-u7Q" secondAttribute="trailing" constant="32" id="Bkz-0x-QIQ"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZSD-JM-3XJ" secondAttribute="bottom" id="Em8-cC-bHc"/>
-                            <constraint firstAttribute="centerY" secondItem="ga2-EA-u7Q" secondAttribute="bottom" constant="20.5" id="GGe-Zy-P4P"/>
-                            <constraint firstItem="ga2-EA-u7Q" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="32" id="Zef-Pk-9Wh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZSD-JM-3XJ" secondAttribute="trailing" id="a5N-GF-fit"/>
-                            <constraint firstItem="ga2-EA-u7Q" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="32" id="eoA-on-2p8"/>
-                            <constraint firstItem="ZSD-JM-3XJ" firstAttribute="top" secondItem="ga2-EA-u7Q" secondAttribute="bottom" constant="32" id="lbZ-Ps-caz"/>
-                            <constraint firstItem="ZSD-JM-3XJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="pZ5-TS-np5"/>
+                            <constraint firstItem="4BZ-nj-JSg" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="GZN-NP-P1J"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4BZ-nj-JSg" secondAttribute="bottom" id="aUH-1A-rHl"/>
+                            <constraint firstItem="4BZ-nj-JSg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="u8W-as-XGw"/>
+                            <constraint firstAttribute="trailing" secondItem="4BZ-nj-JSg" secondAttribute="trailing" id="zP2-b4-8bZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="joystickView" destination="ga2-EA-u7Q" id="5GV-aU-jkN"/>
-                        <outlet property="textView" destination="ZSD-JM-3XJ" id="jrB-h5-kGg"/>
+                        <outlet property="logLabel" destination="Msn-sP-y6h" id="wQ5-tg-iZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="131"/>
+            <point key="canvasLocation" x="136.92307692307691" y="130.80568720379145"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

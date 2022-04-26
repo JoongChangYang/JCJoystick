@@ -10,6 +10,8 @@
 		1EDE09A3F3622715CDFAC79C74C865FA /* JCJoystick-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F11DD857885E638C57B1287AA2341742 /* JCJoystick-dummy.m */; };
 		315BC7F32812D3010029906F /* JCCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC7F22812D3010029906F /* JCCircleView.swift */; };
 		315BC7F52813E0FB0029906F /* JCJoystickBoundaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC7F42813E0FB0029906F /* JCJoystickBoundaryView.swift */; };
+		315BC7F9281826280029906F /* JCJoystickValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC7F8281826280029906F /* JCJoystickValue.swift */; };
+		315BC7FB28182A060029906F /* JCAngleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC7FA28182A060029906F /* JCAngleType.swift */; };
 		3166B9ED2812B5BC005E8046 /* JCJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166B9EC2812B5BC005E8046 /* JCJoystickView.swift */; };
 		66E41E1FAA39222876E6D10280EABEDA /* JCJoystick-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D428A1902D013BC7D8D1D6DD0F530E95 /* JCJoystick-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DC6E85471D72150819C0BFAE36357D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
@@ -47,6 +49,8 @@
 		2A3C9DDD53870B147216CEFCE8AEB09D /* Pods-JCJoystick_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JCJoystick_Tests-Info.plist"; sourceTree = "<group>"; };
 		315BC7F22812D3010029906F /* JCCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCCircleView.swift; sourceTree = "<group>"; };
 		315BC7F42813E0FB0029906F /* JCJoystickBoundaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCJoystickBoundaryView.swift; sourceTree = "<group>"; };
+		315BC7F8281826280029906F /* JCJoystickValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCJoystickValue.swift; sourceTree = "<group>"; };
+		315BC7FA28182A060029906F /* JCAngleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCAngleType.swift; sourceTree = "<group>"; };
 		3166B9EC2812B5BC005E8046 /* JCJoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCJoystickView.swift; sourceTree = "<group>"; };
 		422B3A1BC625772BB53EC5E03D48E7F9 /* Pods-JCJoystick_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JCJoystick_Example.release.xcconfig"; sourceTree = "<group>"; };
 		43836787A21E8A3E061E614A3DA80A16 /* Pods-JCJoystick_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JCJoystick_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				FC8AD5BF235604BAE8E638EC693C35EC /* Pod */,
 				C98345CDB5712BE98AC3E631F806ED17 /* Support Files */,
 				3166B9EC2812B5BC005E8046 /* JCJoystickView.swift */,
+				315BC7FA28182A060029906F /* JCAngleType.swift */,
+				315BC7F8281826280029906F /* JCJoystickValue.swift */,
 				315BC7F42813E0FB0029906F /* JCJoystickBoundaryView.swift */,
 				315BC7F22812D3010029906F /* JCCircleView.swift */,
 			);
@@ -391,6 +397,8 @@
 			files = (
 				1EDE09A3F3622715CDFAC79C74C865FA /* JCJoystick-dummy.m in Sources */,
 				3166B9ED2812B5BC005E8046 /* JCJoystickView.swift in Sources */,
+				315BC7FB28182A060029906F /* JCAngleType.swift in Sources */,
+				315BC7F9281826280029906F /* JCJoystickValue.swift in Sources */,
 				315BC7F32812D3010029906F /* JCCircleView.swift in Sources */,
 				315BC7F52813E0FB0029906F /* JCJoystickBoundaryView.swift in Sources */,
 			);

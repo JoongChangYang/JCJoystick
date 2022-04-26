@@ -7,10 +7,19 @@
 
 import UIKit
 
+public protocol JCJoystickViewDelegate: AnyObject {
+    func joystickView(joystickView: JCJoystickView, value: JCJoystickValue)
+}
+
 open class JCJoystickView: UIView {
     
     private let _boundaryView = JCJoystickBoundaryView()
     private let _thumbView = JCCircleView()
+    private lazy var thumbViewDiameterConstraint = self.thumbView.widthAnchor.constraint(equalToConstant: 50)
+    
+    public weak var delegate: JCJoystickViewDelegate?
+    
+    public var angleValueType: JCAngleType = .degree
     
     open var boundaryView: JCJoystickBoundaryView {
         self._boundaryView
@@ -24,6 +33,12 @@ open class JCJoystickView: UIView {
         return self.boundaryView.radius - self.thumbView.radius
     }
     
+    public var thumbDiameterMultiplier = 0.25 {
+        didSet {
+            self.updateThumbViewDiameterConstraint()
+        }
+    }
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupAttribute()
@@ -38,8 +53,7 @@ open class JCJoystickView: UIView {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        let boundaryRadius = self.boundaryImage == nil ? min(self.boundaryView.bounds.width, self.boundaryView.bounds.height) / 2: 0
-        self.boundaryView.layer.cornerRadius = boundaryRadius
+        self.updateThumbViewDiameterConstraint()
     }
     
     open func beganDrag(location: CGPoint) {
@@ -56,21 +70,31 @@ open class JCJoystickView: UIView {
 }
 
 extension JCJoystickView {
-    public var boundaryImage: UIImage? {
-        get { self._boundaryView.image }
-        set { self._boundaryView.image = newValue }
+    
+    private var defaultBoundaryImage: UIImage {
+        return self.createDefaultImage(borderColor: .darkGray, borderWidth: 8)
     }
     
-    public var thumbImage: UIImage? {
-        get { self._thumbView.image }
-        set { self._thumbView.image = newValue }
+    private var defaultThumbImage: UIImage {
+        return self.createDefaultImage(borderColor: .gray, borderWidth: 20)
     }
-}
-
-extension JCJoystickView {
+    
+    private func createDefaultImage(borderColor: UIColor, borderWidth: CGFloat) -> UIImage {
+        let imageSize = CGSize(width: 200, height: 200)
+        let view = UIView(frame: .init(origin: .zero, size: imageSize))
+        view.backgroundColor = .white
+        view.layer.cornerRadius = imageSize.height / 2
+        view.layer.borderWidth = borderWidth
+        view.layer.borderColor = borderColor.cgColor
+        let renderer = UIGraphicsImageRenderer(bounds: view.bounds)
+        return renderer.image { rendererContext in
+            view.layer.render(in: rendererContext.cgContext)
+        }
+    }
+    
     private func setupAttribute() {
-        self._boundaryView.backgroundColor = .gray
-        self._thumbView.backgroundColor = .lightGray
+        self._boundaryView.image = self.defaultBoundaryImage
+        self._thumbView.image = self.defaultThumbImage
         self._boundaryView.delegate = self
     }
     
@@ -100,8 +124,15 @@ extension JCJoystickView {
         
         [self.thumbView.centerXAnchor.constraint(equalTo: self.boundaryView.centerXAnchor),
          self.thumbView.centerYAnchor.constraint(equalTo: self.boundaryView.centerYAnchor),
-         self.thumbView.widthAnchor.constraint(equalTo: self.boundaryView.widthAnchor, multiplier: 0.3),
+         self.thumbViewDiameterConstraint,
          self.thumbView.heightAnchor.constraint(equalTo: self.thumbView.widthAnchor)].forEach { $0.isActive = true }
+    }
+    
+    private func updateThumbViewDiameterConstraint() {
+        let multiplier = self.thumbDiameterMultiplier <= 1 ? self.thumbDiameterMultiplier: 1
+        let constant = self.boundaryView.bounds.width * multiplier
+        self.thumbViewDiameterConstraint.constant = constant
+        self.layoutIfNeeded()
     }
     
     private func confirmThumbPoint(location: CGPoint) {
@@ -110,14 +141,32 @@ extension JCJoystickView {
         let currentDistance = self.straightDistance(center: center, location: location)
         let radian = self.radian(center: center, location: location)
         
+        let newPoint: CGPoint
+        let moveMentRange: CGFloat
+        
         if maximumRadius > currentDistance {
-            self.thumbView.center = location
+            newPoint = location
+            moveMentRange = maximumRadius / currentDistance
         } else {
-            self.thumbView.center = self.maximumPoint(center: center, radius: maximumRadius, radian: radian)
+            newPoint = self.maximumPoint(center: center, radius: maximumRadius, radian: radian)
+            moveMentRange = 1
         }
         
-        print("radian: \(radian)")
-        print("degree: \(radian * (180 / .pi))")
+        self.thumbView.center = newPoint
+        
+        let angleValue: CGFloat
+        
+        switch self.angleValueType {
+        case .degree:
+            angleValue = radian * (180 / .pi)
+        case .radian:
+            angleValue = radian
+        }
+        
+        
+        let result = JCJoystickValue(angle: angleValue, movementRange: moveMentRange)
+        self.delegate?.joystickView(joystickView: self, value: result)
+        
     }
     
     private func maximumPoint(center: CGPoint, radius: CGFloat, radian: CGFloat) -> CGPoint {
@@ -145,8 +194,28 @@ extension JCJoystickView {
     }
 }
 
+extension JCJoystickView {
+    public var boundaryImage: UIImage? {
+        get { self._boundaryView.image }
+        set { self._boundaryView.image = newValue }
+    }
+    
+    public var boundaryImageView: UIImageView {
+        return self.boundaryView.imageView
+    }
+    
+    public var thumbImage: UIImage? {
+        get { self._thumbView.image }
+        set { self._thumbView.image = newValue }
+    }
+    
+    public var thumbImageView: UIImageView {
+        return self.thumbView.imageView
+    }
+}
+
 extension JCJoystickView: JCJoystickBoundaryViewDelegate {
-    func boundaryView(event: JCJoystickBoundaryView.Event) {
+    func boundaryView(boundaryView: JCJoystickBoundaryView, event: JCJoystickBoundaryView.Event) {
         switch event {
         case .began(let location):
             self.beganDrag(location: location)

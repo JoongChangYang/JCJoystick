@@ -8,7 +8,7 @@
 import UIKit
 
 protocol JCJoystickBoundaryViewDelegate: AnyObject {
-    func boundaryView(event: JCJoystickBoundaryView.Event)
+    func boundaryView(boundaryView: JCJoystickBoundaryView, event: JCJoystickBoundaryView.Event)
 }
 
 open class JCJoystickBoundaryView: JCCircleView {
@@ -18,23 +18,23 @@ open class JCJoystickBoundaryView: JCCircleView {
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         guard let location = touches.first?.location(in: self) else { return }
-        self.delegate?.boundaryView(event: .began(location))
+        self.delegate?.boundaryView(boundaryView: self, event: .began(location))
     }
     
     open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         guard let location = touches.first?.location(in: self) else { return }
-        self.delegate?.boundaryView(event: .moved(location))
+        self.delegate?.boundaryView(boundaryView: self, event: .moved(location))
     }
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        self.delegate?.boundaryView(event: .end)
+        self.delegate?.boundaryView(boundaryView: self, event: .end)
     }
     
     open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
-        self.delegate?.boundaryView(event: .end)
+        self.delegate?.boundaryView(boundaryView: self, event: .end)
     }
 }
 
