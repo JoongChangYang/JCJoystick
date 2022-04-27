@@ -64,7 +64,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w6q-T4-gmh">
                                                 <rect key="frame" x="0.0" y="109.3333333333333" width="358" height="59.333333333333329"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thumbLimitStyle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9n-g9-Y8K">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thumbSizeMultiplier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9n-g9-Y8K">
                                                         <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -95,7 +95,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gd7-nk-EBG">
                                                 <rect key="frame" x="0.0" y="202.66666666666669" width="358" height="58.333333333333314"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thumbDiameterMultiplier: 0.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-dc-u2Y">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thumbSizeMultiplier: 0.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-dc-u2Y">
                                                         <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -104,7 +104,7 @@
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.10000000000000001" maxValue="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="YkP-Fb-G1t">
                                                         <rect key="frame" x="-2" y="28.333333333333258" width="362" height="31"/>
                                                         <connections>
-                                                            <action selector="changeValueThumbDiameterMultiplier:" destination="vXZ-lx-hvc" eventType="valueChanged" id="nf2-w7-4aU"/>
+                                                            <action selector="changeValueThumbSizeMultiplier:" destination="vXZ-lx-hvc" eventType="valueChanged" id="gq4-Oh-GVL"/>
                                                         </connections>
                                                     </slider>
                                                 </subviews>

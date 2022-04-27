@@ -42,9 +42,9 @@ open class JCJoystickView: UIView {
         }
     }
     
-    public var thumbDiameterMultiplier: CGFloat = 0.25 {
+    public var thumbSizeMultiplier: CGFloat = 0.25 {
         didSet {
-            self.updateThumbViewDiameterConstraint()
+            self.updateThumbViewSizeConstraint()
         }
     }
 
@@ -62,7 +62,7 @@ open class JCJoystickView: UIView {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        self.updateThumbViewDiameterConstraint()
+        self.updateThumbViewSizeConstraint()
     }
     
     open func beganDrag(location: CGPoint) {
@@ -158,8 +158,8 @@ extension JCJoystickView {
          self.thumbView.heightAnchor.constraint(equalTo: self.thumbView.widthAnchor)].forEach { $0.isActive = true }
     }
     
-    private func updateThumbViewDiameterConstraint() {
-        let multiplier = self.thumbDiameterMultiplier <= 1 ? self.thumbDiameterMultiplier: 1
+    private func updateThumbViewSizeConstraint() {
+        let multiplier = self.thumbSizeMultiplier <= 1 ? self.thumbSizeMultiplier: 1
         let constant = self.boundaryView.bounds.width * multiplier
         self.thumbViewDiameterConstraint.constant = constant
         self.layoutIfNeeded()

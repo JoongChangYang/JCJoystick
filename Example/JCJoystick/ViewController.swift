@@ -104,10 +104,10 @@ final class ViewController: UIViewController {
         }
     }
     
-    @IBAction private func changeValueThumbDiameterMultiplier(_ sender: UISlider) {
+    @IBAction private func changeValueThumbSizeMultiplier(_ sender: UISlider) {
         let value = sender.value
-        self.thumbDiameterMultiplierLabel.text = "thumbDiameterMultiplier: \(value)"
-        self.joystickView.thumbDiameterMultiplier = CGFloat(value)
+        self.thumbDiameterMultiplierLabel.text = "thumbSizeMultiplier: \(value)"
+        self.joystickView.thumbSizeMultiplier = CGFloat(value)
     }
     
 }
