@@ -106,14 +106,29 @@ final class ViewController: UIViewController {
     
     @IBAction private func changeValueThumbDiameterMultiplier(_ sender: UISlider) {
         let value = sender.value
-        thumbDiameterMultiplierLabel.text = "thumbDiameterMultiplier: \(value)"
+        self.thumbDiameterMultiplierLabel.text = "thumbDiameterMultiplier: \(value)"
         self.joystickView.thumbDiameterMultiplier = CGFloat(value)
     }
     
 }
 
 extension ViewController: JCJoystickViewDelegate {
-    func joystickView(joystickView: JCJoystickView, value: JCJoystickValue) {
+    func joystickView(joystickView: JCJoystickView, shouldDrag value: JCJoystickValue) -> Bool {
+        print("\(#function) -> \(value)")
+        return true
+    }
+    
+    func joystickView(joystickView: JCJoystickView, beganDrag value: JCJoystickValue) {
+        print("\(#function) -> \(value)")
+    }
+    
+    func joystickView(joystickView: JCJoystickView, didDrag value: JCJoystickValue) {
+        print("\(#function) -> \(value)")
         self.log(value: value)
     }
+    
+    func joystickView(joystickView: JCJoystickView, didEndDrag value: JCJoystickValue) {
+        print("\(#function) -> \(value)")
+    }
+    
 }
