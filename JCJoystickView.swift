@@ -20,6 +20,7 @@ open class JCJoystickView: UIView {
     public weak var delegate: JCJoystickViewDelegate?
     
     public var angleValueType: JCAngleType = .degree
+    public var thumbLimitStyle: JCThumbLimitStyle = .inside
     
     open var boundaryView: JCJoystickBoundaryView {
         self._boundaryView
@@ -29,11 +30,24 @@ open class JCJoystickView: UIView {
         self._thumbView
     }
     
-    open var maximumRadius: CGFloat {
-        return self.boundaryView.radius - self.thumbView.radius
+    open var maximumRadius: CGFloat? {
+        switch self.thumbLimitStyle {
+        case .inside:
+            return self.boundaryView.radius - self.thumbView.radius
+        case .outside:
+            return self.boundaryView.radius + self.thumbView.radius
+        case .center:
+            return self.boundaryView.radius
+        case .customWithConstant(constant: let constant):
+            return self.boundaryView.radius + constant
+        case .customWithMultiplier(multiplier: let multiplier):
+            return self.boundaryView.radius * multiplier
+        case .unLimited:
+            return nil
+        }
     }
     
-    public var thumbDiameterMultiplier = 0.25 {
+    public var thumbDiameterMultiplier: CGFloat = 0.25 {
         didSet {
             self.updateThumbViewDiameterConstraint()
         }
@@ -137,23 +151,26 @@ extension JCJoystickView {
     
     private func confirmThumbPoint(location: CGPoint) {
         let center = self.boundaryView.centerPoint
-        let maximumRadius = self.maximumRadius
         let currentDistance = self.straightDistance(center: center, location: location)
         let radian = self.radian(center: center, location: location)
         
         let newPoint: CGPoint
         let moveMentRange: CGFloat
         
-        if maximumRadius > currentDistance {
-            newPoint = location
-            moveMentRange = maximumRadius / currentDistance
-        } else {
+        if let maximumRadius = self.maximumRadius, maximumRadius < currentDistance {
             newPoint = self.maximumPoint(center: center, radius: maximumRadius, radian: radian)
             moveMentRange = 1
+        } else {
+            newPoint = location
+            moveMentRange = currentDistance / (self.maximumRadius ?? self.boundaryView.radius)
         }
         
         self.thumbView.center = newPoint
         
+        self.releaseJoystickValue(radian: radian, movementRange: moveMentRange)
+    }
+    
+    private func releaseJoystickValue(radian: CGFloat, movementRange: CGFloat) {
         let angleValue: CGFloat
         
         switch self.angleValueType {
@@ -163,10 +180,8 @@ extension JCJoystickView {
             angleValue = radian
         }
         
-        
-        let result = JCJoystickValue(angle: angleValue, movementRange: moveMentRange)
+        let result = JCJoystickValue(angle: angleValue, movementRange: movementRange)
         self.delegate?.joystickView(joystickView: self, value: result)
-        
     }
     
     private func maximumPoint(center: CGPoint, radius: CGFloat, radian: CGFloat) -> CGPoint {
