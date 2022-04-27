@@ -112,6 +112,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		315BC8002819B8E20029906F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				315BC7FE2819B4E80029906F /* JCJoystickViewDelegate.swift */,
+				3166B9EC2812B5BC005E8046 /* JCJoystickView.swift */,
+				315BC7F42813E0FB0029906F /* JCJoystickBoundaryView.swift */,
+				315BC7F22812D3010029906F /* JCCircleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		315BC8012819B8F30029906F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				315BC7FC28198AA00029906F /* JCThumbLimitStyle.swift */,
+				315BC7FA28182A060029906F /* JCAngleType.swift */,
+				315BC7F8281826280029906F /* JCJoystickValue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,15 +187,10 @@
 		BC1A42A891C13FDC751A97E193E495BE /* JCJoystick */ = {
 			isa = PBXGroup;
 			children = (
+				315BC8012819B8F30029906F /* Model */,
+				315BC8002819B8E20029906F /* View */,
 				FC8AD5BF235604BAE8E638EC693C35EC /* Pod */,
 				C98345CDB5712BE98AC3E631F806ED17 /* Support Files */,
-				315BC7FE2819B4E80029906F /* JCJoystickViewDelegate.swift */,
-				3166B9EC2812B5BC005E8046 /* JCJoystickView.swift */,
-				315BC7FC28198AA00029906F /* JCThumbLimitStyle.swift */,
-				315BC7FA28182A060029906F /* JCAngleType.swift */,
-				315BC7F8281826280029906F /* JCJoystickValue.swift */,
-				315BC7F42813E0FB0029906F /* JCJoystickBoundaryView.swift */,
-				315BC7F22812D3010029906F /* JCCircleView.swift */,
 			);
 			name = JCJoystick;
 			path = ../..;
