@@ -22,7 +22,7 @@ pod 'JCJoystick'
 
 ## Preview
 
-<img src="assets/Joystick_preview.MP4" style="float: left; width:30%;"/>
+<img src="assets/Joystick_preview.gif" style="float: left; width:30%;"/>
 
 ## Usage
 
