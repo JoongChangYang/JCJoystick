@@ -73,7 +73,7 @@ public protocol JCJoystickViewDelegate: AnyObject {
   //or
   joystickView.thumbLimitStyle = .outside
   //or
-  joystickView.thumbLimitStyle = .unLimited
+  joystickView.thumbLimitStyle = .unlimited
   //or
   joystickView.thumbLimitStyle = .customWithConstant(constant: 20)
   //or

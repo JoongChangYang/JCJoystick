@@ -13,5 +13,5 @@ public enum JCThumbLimitStyle {
     case center
     case customWithConstant(constant: CGFloat)
     case customWithMultiplier(multiplier: CGFloat)
-    case unLimited
+    case unlimited
 }

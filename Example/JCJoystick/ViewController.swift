@@ -98,7 +98,7 @@ final class ViewController: UIViewController {
         case 2:
             self.joystickView.thumbLimitStyle = .outside
         case 3:
-            self.joystickView.thumbLimitStyle = .unLimited
+            self.joystickView.thumbLimitStyle = .unlimited
         default:
             break
         }
