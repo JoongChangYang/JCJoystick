@@ -22,15 +22,11 @@ public extension JCJoystickViewDelegate {
 }
 
 open class JCJoystickView: UIView {
+    public weak var delegate: JCJoystickViewDelegate?
     
     private let _boundaryView = JCJoystickBoundaryView()
     private let _thumbView = JCCircleView()
     private lazy var thumbViewDiameterConstraint = self.thumbView.widthAnchor.constraint(equalToConstant: 50)
-    
-    public weak var delegate: JCJoystickViewDelegate?
-    
-    public var angleValueType: JCAngleType = .degree
-    public var thumbLimitStyle: JCThumbLimitStyle = .inside
     
     open var boundaryView: JCJoystickBoundaryView {
         self._boundaryView
@@ -39,6 +35,9 @@ open class JCJoystickView: UIView {
     open var thumbView: JCCircleView {
         self._thumbView
     }
+    
+    public var angleValueType: JCAngleType = .degree
+    public var thumbLimitStyle: JCThumbLimitStyle = .inside
     
     open var maximumRadius: CGFloat? {
         switch self.thumbLimitStyle {
