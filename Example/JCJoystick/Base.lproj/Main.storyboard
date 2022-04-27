@@ -21,16 +21,39 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4BZ-nj-JSg">
-                                <rect key="frame" x="0.0" y="43.999999999999972" width="390" height="472.33333333333326"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="598.66666666666663"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msn-sP-y6h">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydi-oF-5k3">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="48.666666666666664"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ocv-88-i5S">
+                                                <rect key="frame" x="32" y="0.0" width="326" height="48.666666666666664"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="r" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ep5-5l-2OS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="326" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msn-sP-y6h">
+                                                        <rect key="frame" x="0.0" y="28.333333333333329" width="326" height="20.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Ocv-88-i5S" firstAttribute="top" secondItem="ydi-oF-5k3" secondAttribute="top" id="3Su-po-GBx"/>
+                                            <constraint firstItem="Ocv-88-i5S" firstAttribute="leading" secondItem="ydi-oF-5k3" secondAttribute="leading" constant="32" id="FJM-4d-v6f"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ocv-88-i5S" secondAttribute="bottom" id="MwG-Uz-cfC"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ocv-88-i5S" secondAttribute="trailing" constant="32" id="X2g-CX-00u"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdQ-IX-QLW">
-                                        <rect key="frame" x="0.0" y="36.333333333333314" width="390" height="390"/>
+                                        <rect key="frame" x="0.0" y="64.666666666666686" width="390" height="390"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ga2-EA-u7Q" customClass="JCJoystickView" customModule="JCJoystick">
                                                 <rect key="frame" x="60" y="60" width="270" height="270"/>
@@ -47,9 +70,41 @@
                                             <constraint firstItem="ga2-EA-u7Q" firstAttribute="top" secondItem="xdQ-IX-QLW" secondAttribute="top" constant="60" id="wK1-d0-A8M"/>
                                         </constraints>
                                     </view>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eVA-K8-RKc">
-                                        <rect key="frame" x="-2" y="442.33333333333331" width="394" height="31"/>
-                                    </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BQr-gT-K3X">
+                                        <rect key="frame" x="0.0" y="470.66666666666663" width="390" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRo-1y-5BZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" id="mGg-wi-VgG"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="angleType:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuU-At-JLa">
+                                                <rect key="frame" x="16" y="0.0" width="82" height="128"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="971-tP-6Gi">
+                                                <rect key="frame" x="114" y="0.0" width="260" height="129"/>
+                                                <segments>
+                                                    <segment title="degree"/>
+                                                    <segment title="radian"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="selectedAngleType:" destination="vXZ-lx-hvc" eventType="valueChanged" id="4Ba-u2-EjK"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFg-yP-PCf">
+                                                <rect key="frame" x="390" y="0.0" width="0.0" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" id="B5k-dP-lht"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -62,8 +117,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="angleLabel" destination="Msn-sP-y6h" id="PRc-cV-ONm"/>
                         <outlet property="joystickView" destination="ga2-EA-u7Q" id="5GV-aU-jkN"/>
-                        <outlet property="logLabel" destination="Msn-sP-y6h" id="wQ5-tg-iZC"/>
+                        <outlet property="rangeLabel" destination="ep5-5l-2OS" id="bxj-1c-kDx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

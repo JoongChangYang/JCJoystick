@@ -15,7 +15,8 @@ final class ViewController: UIViewController {
         didSet { self.joystickView.angleValueType = self.angleValueType }
     }
     
-    @IBOutlet private weak var logLabel: UILabel!
+    @IBOutlet private weak var angleLabel: UILabel!
+    @IBOutlet private weak var rangeLabel: UILabel!
     @IBOutlet private weak var joystickView: JCJoystickView!
     
     override func viewDidLoad() {
@@ -34,24 +35,33 @@ final class ViewController: UIViewController {
     }
 
     private func log(value: JCJoystickValue) {
-        var text: String
-        
         switch self.angleValueType {
         case .degree:
-            text = "degree: \(value.angle)"
+            self.angleLabel.text = "degree: \(value.angle)"
         case .radian:
-            text = "radian: \(value.angle)"
+            self.angleLabel.text = "radian: \(value.angle)"
         }
         
-        text += "\nmoveMentRange: \(value.movementRange)"
-        
-        self.logLabel.text = text
+        self.rangeLabel.text = "range: \(value.movementRange)"
     }
+    
+    
+    @IBAction private func selectedAngleType(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.angleValueType = .degree
+        case 1:
+            self.angleValueType = .radian
+        default:
+            break
+        }
+        self.log(value: .zero)
+    }
+    
 }
 
 extension ViewController: JCJoystickViewDelegate {
     func joystickView(joystickView: JCJoystickView, value: JCJoystickValue) {
-        print(value)
         self.log(value: value)
     }
 }
