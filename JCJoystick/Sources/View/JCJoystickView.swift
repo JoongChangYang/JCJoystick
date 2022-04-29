@@ -37,7 +37,7 @@ open class JCJoystickView: UIView {
             return self.boundaryView.radius + constant
         case .customWithMultiplier(multiplier: let multiplier):
             return self.boundaryView.radius * multiplier
-        case .unLimited:
+        case .unlimited:
             return nil
         }
     }

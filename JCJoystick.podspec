@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0'
   s.swift_version = '5.0'
-  s.source_files = 'JCJoystick/Classes/**/*'
+  s.source_files = 'JCJoystick/Sources/**/*'
   
   # s.resource_bundles = {
   #   'JCJoystick' => ['JCJoystick/Assets/*.png']

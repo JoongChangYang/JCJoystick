@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1EDE09A3F3622715CDFAC79C74C865FA /* JCJoystick-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F11DD857885E638C57B1287AA2341742 /* JCJoystick-dummy.m */; };
-		315BC7F32812D3010029906F /* JCCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC7F22812D3010029906F /* JCCircleView.swift */; };
-		315BC7F52813E0FB0029906F /* JCJoystickBoundaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC7F42813E0FB0029906F /* JCJoystickBoundaryView.swift */; };
-		315BC7F9281826280029906F /* JCJoystickValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC7F8281826280029906F /* JCJoystickValue.swift */; };
-		315BC7FB28182A060029906F /* JCAngleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC7FA28182A060029906F /* JCAngleType.swift */; };
-		315BC7FD28198AA00029906F /* JCThumbLimitStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC7FC28198AA00029906F /* JCThumbLimitStyle.swift */; };
-		315BC7FF2819B4E80029906F /* JCJoystickViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC7FE2819B4E80029906F /* JCJoystickViewDelegate.swift */; };
-		3166B9ED2812B5BC005E8046 /* JCJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166B9EC2812B5BC005E8046 /* JCJoystickView.swift */; };
+		315BC81F281C286D0029906F /* JCJoystickValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC817281C286D0029906F /* JCJoystickValue.swift */; };
+		315BC820281C286D0029906F /* JCAngleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC818281C286D0029906F /* JCAngleType.swift */; };
+		315BC821281C286D0029906F /* JCThumbLimitStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC819281C286D0029906F /* JCThumbLimitStyle.swift */; };
+		315BC822281C286D0029906F /* JCJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC81B281C286D0029906F /* JCJoystickView.swift */; };
+		315BC823281C286D0029906F /* JCJoystickViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC81C281C286D0029906F /* JCJoystickViewDelegate.swift */; };
+		315BC824281C286D0029906F /* JCCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC81D281C286D0029906F /* JCCircleView.swift */; };
+		315BC825281C286D0029906F /* JCJoystickBoundaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BC81E281C286D0029906F /* JCJoystickBoundaryView.swift */; };
 		66E41E1FAA39222876E6D10280EABEDA /* JCJoystick-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D428A1902D013BC7D8D1D6DD0F530E95 /* JCJoystick-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DC6E85471D72150819C0BFAE36357D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		8A2D74D1AF5F719BFC2049346DFF8047 /* Pods-JCJoystick_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD541ADE94E2C172F7474DDDE12D6D7 /* Pods-JCJoystick_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,13 +49,13 @@
 		235344E4C484ACEB9C59E90DA3ACC6C1 /* Pods-JCJoystick_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JCJoystick_Example-dummy.m"; sourceTree = "<group>"; };
 		23DCB7EE73C04EA33314A5268C65B389 /* Pods-JCJoystick_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JCJoystick_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2A3C9DDD53870B147216CEFCE8AEB09D /* Pods-JCJoystick_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JCJoystick_Tests-Info.plist"; sourceTree = "<group>"; };
-		315BC7F22812D3010029906F /* JCCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCCircleView.swift; sourceTree = "<group>"; };
-		315BC7F42813E0FB0029906F /* JCJoystickBoundaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCJoystickBoundaryView.swift; sourceTree = "<group>"; };
-		315BC7F8281826280029906F /* JCJoystickValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCJoystickValue.swift; sourceTree = "<group>"; };
-		315BC7FA28182A060029906F /* JCAngleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCAngleType.swift; sourceTree = "<group>"; };
-		315BC7FC28198AA00029906F /* JCThumbLimitStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCThumbLimitStyle.swift; sourceTree = "<group>"; };
-		315BC7FE2819B4E80029906F /* JCJoystickViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCJoystickViewDelegate.swift; sourceTree = "<group>"; };
-		3166B9EC2812B5BC005E8046 /* JCJoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCJoystickView.swift; sourceTree = "<group>"; };
+		315BC817281C286D0029906F /* JCJoystickValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCJoystickValue.swift; sourceTree = "<group>"; };
+		315BC818281C286D0029906F /* JCAngleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCAngleType.swift; sourceTree = "<group>"; };
+		315BC819281C286D0029906F /* JCThumbLimitStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCThumbLimitStyle.swift; sourceTree = "<group>"; };
+		315BC81B281C286D0029906F /* JCJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCJoystickView.swift; sourceTree = "<group>"; };
+		315BC81C281C286D0029906F /* JCJoystickViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCJoystickViewDelegate.swift; sourceTree = "<group>"; };
+		315BC81D281C286D0029906F /* JCCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCCircleView.swift; sourceTree = "<group>"; };
+		315BC81E281C286D0029906F /* JCJoystickBoundaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCJoystickBoundaryView.swift; sourceTree = "<group>"; };
 		422B3A1BC625772BB53EC5E03D48E7F9 /* Pods-JCJoystick_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JCJoystick_Example.release.xcconfig"; sourceTree = "<group>"; };
 		43836787A21E8A3E061E614A3DA80A16 /* Pods-JCJoystick_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JCJoystick_Tests-dummy.m"; sourceTree = "<group>"; };
 		537897481368CF18098EC913F7DCBF61 /* Pods-JCJoystick_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JCJoystick_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,25 +112,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		315BC8002819B8E20029906F /* View */ = {
+		315BC815281C286D0029906F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				315BC7FE2819B4E80029906F /* JCJoystickViewDelegate.swift */,
-				3166B9EC2812B5BC005E8046 /* JCJoystickView.swift */,
-				315BC7F42813E0FB0029906F /* JCJoystickBoundaryView.swift */,
-				315BC7F22812D3010029906F /* JCCircleView.swift */,
+				315BC816281C286D0029906F /* Model */,
+				315BC81A281C286D0029906F /* View */,
 			);
-			path = View;
+			name = Sources;
+			path = JCJoystick/Sources;
 			sourceTree = "<group>";
 		};
-		315BC8012819B8F30029906F /* Model */ = {
+		315BC816281C286D0029906F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				315BC7FC28198AA00029906F /* JCThumbLimitStyle.swift */,
-				315BC7FA28182A060029906F /* JCAngleType.swift */,
-				315BC7F8281826280029906F /* JCJoystickValue.swift */,
+				315BC817281C286D0029906F /* JCJoystickValue.swift */,
+				315BC818281C286D0029906F /* JCAngleType.swift */,
+				315BC819281C286D0029906F /* JCThumbLimitStyle.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		315BC81A281C286D0029906F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				315BC81B281C286D0029906F /* JCJoystickView.swift */,
+				315BC81C281C286D0029906F /* JCJoystickViewDelegate.swift */,
+				315BC81D281C286D0029906F /* JCCircleView.swift */,
+				315BC81E281C286D0029906F /* JCJoystickBoundaryView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -187,8 +197,7 @@
 		BC1A42A891C13FDC751A97E193E495BE /* JCJoystick */ = {
 			isa = PBXGroup;
 			children = (
-				315BC8012819B8F30029906F /* Model */,
-				315BC8002819B8E20029906F /* View */,
+				315BC815281C286D0029906F /* Sources */,
 				FC8AD5BF235604BAE8E638EC693C35EC /* Pod */,
 				C98345CDB5712BE98AC3E631F806ED17 /* Support Files */,
 			);
@@ -417,14 +426,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315BC81F281C286D0029906F /* JCJoystickValue.swift in Sources */,
 				1EDE09A3F3622715CDFAC79C74C865FA /* JCJoystick-dummy.m in Sources */,
-				315BC7FD28198AA00029906F /* JCThumbLimitStyle.swift in Sources */,
-				315BC7FF2819B4E80029906F /* JCJoystickViewDelegate.swift in Sources */,
-				3166B9ED2812B5BC005E8046 /* JCJoystickView.swift in Sources */,
-				315BC7FB28182A060029906F /* JCAngleType.swift in Sources */,
-				315BC7F9281826280029906F /* JCJoystickValue.swift in Sources */,
-				315BC7F32812D3010029906F /* JCCircleView.swift in Sources */,
-				315BC7F52813E0FB0029906F /* JCJoystickBoundaryView.swift in Sources */,
+				315BC824281C286D0029906F /* JCCircleView.swift in Sources */,
+				315BC825281C286D0029906F /* JCJoystickBoundaryView.swift in Sources */,
+				315BC822281C286D0029906F /* JCJoystickView.swift in Sources */,
+				315BC820281C286D0029906F /* JCAngleType.swift in Sources */,
+				315BC823281C286D0029906F /* JCJoystickViewDelegate.swift in Sources */,
+				315BC821281C286D0029906F /* JCThumbLimitStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
