@@ -20,10 +20,6 @@ it, simply add the following line to your Podfile:
 pod 'JCJoystick'
 ```
 
-## Preview
-
-<img src="assets/Joystick_preview.gif" style="float: left; width:30%;"/>
-
 ## Usage
 
 ### Basic
@@ -32,6 +28,8 @@ pod 'JCJoystick'
 let joystickView = JCJoystickView()
 joystickView.delegate = self
 ```
+
+<img src="assets/JCJoystick_basic.gif" style="float: left; width:30%;"/>
 
 ### Delegate
 
@@ -63,6 +61,8 @@ public protocol JCJoystickViewDelegate: AnyObject {
   joystickView.angleValueType = .radian
   ```
 
+  <img src="assets/JCJoystick_angleType.gif" style="float: left; width:30%;"/>
+
 - thumbLimitStyle
 
   ``` swift
@@ -80,12 +80,16 @@ public protocol JCJoystickViewDelegate: AnyObject {
   joystickView.thumbLimitStyle = .customWithMultiplier(multiplier: 1.5)
   ```
 
+  <img src="assets/JCJoystick_thumbLimitStyle.gif" style="float: left; width:30%;"/>
+
 - thumbSizeMultiplier
 
   ``` swift
   let joystickView = JCJoystickView()
   self.joystickView.thumbSizeMultiplier = 0.25
   ```
+  
+  <img src="assets/JCJoystick_thumbSizeMultiplier.gif" style="float: left; width:30%;"/>
 
 ## Author
 
