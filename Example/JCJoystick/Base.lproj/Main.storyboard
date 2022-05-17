@@ -64,7 +64,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w6q-T4-gmh">
                                                 <rect key="frame" x="0.0" y="109.3333333333333" width="358" height="59.333333333333329"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thumbSizeMultiplier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9n-g9-Y8K">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thumbLimitStyle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9n-g9-Y8K">
                                                         <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -79,7 +79,6 @@
                                                             <segment title="unlimited"/>
                                                         </segments>
                                                         <connections>
-                                                            <action selector="selectedAngleType:" destination="vXZ-lx-hvc" eventType="valueChanged" id="bnr-RZ-XsB"/>
                                                             <action selector="selectedThumbLimitStyle:" destination="vXZ-lx-hvc" eventType="valueChanged" id="QB3-xa-j7b"/>
                                                         </connections>
                                                     </segmentedControl>
