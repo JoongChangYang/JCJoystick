@@ -22,8 +22,6 @@ pod 'JCJoystick'
 
 ## Usage
 
-<img src="assets/JCJoystick_basic.gif" align = "left" width = 30%/>
-
 ### Basic
 
 ``` swift
@@ -31,7 +29,7 @@ let joystickView = JCJoystickView()
 joystickView.delegate = self
 ```
 
-<img src="assets/JCJoystick_basic.gif" style="float: left; width:30%;"/>
+<img src="assets/JCJoystick_basic.gif" align = "left" width = 30%/>
 
 ### Delegate
 
@@ -82,7 +80,7 @@ public protocol JCJoystickViewDelegate: AnyObject {
   joystickView.thumbLimitStyle = .customWithMultiplier(multiplier: 1.5)
   ```
 
-  <img src="assets/JCJoystick_thumbLimitStyle.gif" style="float: left; width:30%;"/>
+  <img src="assets/JCJoystick_thumbLimitStyle.gif" align = "left" width = 30%/>
 
 - thumbSizeMultiplier
 
@@ -91,7 +89,7 @@ public protocol JCJoystickViewDelegate: AnyObject {
   self.joystickView.thumbSizeMultiplier = 0.25
   ```
   
-  <img src="assets/JCJoystick_thumbSizeMultiplier.gif" style="float: left; width:30%;"/>
+  <img src="assets/JCJoystick_thumbSizeMultiplier.gif" align = "left" width = 30%/>
 
 ## Author
 
