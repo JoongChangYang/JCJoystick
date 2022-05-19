@@ -22,6 +22,8 @@ pod 'JCJoystick'
 
 ## Usage
 
+<img src="assets/JCJoystick_basic.gif" style="float: left; width:30%;"/>
+
 ### Basic
 
 ``` swift
