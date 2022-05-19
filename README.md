@@ -61,7 +61,7 @@ public protocol JCJoystickViewDelegate: AnyObject {
   joystickView.angleValueType = .radian
   ```
 
-  <img src="assets/JCJoystick_angleType.gif" style="float: left; width:30%;"/>
+  <img src="assets/JCJoystick_angleType.gif" align = "left" width = 30%/>
 
 - thumbLimitStyle
 
