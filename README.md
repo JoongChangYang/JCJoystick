@@ -31,6 +31,8 @@ joystickView.delegate = self
 
 <img align="left" width="300" src="assets/JCJoystick_basic.gif">
 
+<br/>
+
 ### Delegate
 
 ``` swift
