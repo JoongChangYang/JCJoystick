@@ -29,7 +29,7 @@ let joystickView = JCJoystickView()
 joystickView.delegate = self
 ```
 
-<img src="assets/JCJoystick_basic.gif" align = "left" width = 30%/>
+<img src="assets/JCJoystick_basic.gif" align = "left" width = 300px/>
 
 ### Delegate
 
