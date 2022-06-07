@@ -61,7 +61,7 @@ public protocol JCJoystickViewDelegate: AnyObject {
   joystickView.angleValueType = .radian
   ```
 
-  <img src="assets/JCJoystick_angleType.gif" align = "left" width = 30%/>
+  ![angleType](./assets/JCJoystick_angleType.gif)
 
 - thumbLimitStyle
 
@@ -80,7 +80,7 @@ public protocol JCJoystickViewDelegate: AnyObject {
   joystickView.thumbLimitStyle = .customWithMultiplier(multiplier: 1.5)
   ```
 
-  <img src="assets/JCJoystick_thumbLimitStyle.gif" align = "left" width = 30%/>
+  ![thumbLimitStyle](./assets/JCJoystick_thumbLimitStyle.gif)
 
 - thumbSizeMultiplier
 
@@ -89,7 +89,7 @@ public protocol JCJoystickViewDelegate: AnyObject {
   self.joystickView.thumbSizeMultiplier = 0.25
   ```
   
-  <img src="assets/JCJoystick_thumbSizeMultiplier.gif" align = "left" width = 30%/>
+  ![thumbSizeMultiplier](./assets/JCJoystick_thumbSizeMultiplier.gif)
 
 ## Author
 
