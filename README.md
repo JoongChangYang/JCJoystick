@@ -86,7 +86,7 @@ public protocol JCJoystickViewDelegate: AnyObject {
 
   ``` swift
   let joystickView = JCJoystickView()
-  self.joystickView.thumbSizeMultiplier = 0.25
+  joystickView.thumbSizeMultiplier = 0.25
   ```
   
   ![thumbSizeMultiplier](./assets/JCJoystick_thumbSizeMultiplier.gif)
