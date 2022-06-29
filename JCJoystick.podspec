@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
 
   s.description      = 'View with joystick control.'
 
-  s.homepage         = 'https://github.com/JoongChangYang/JCJoystick'
+  s.homepage         = 'https://github.com/didwndckd/JCJoystick'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'JoongChangYang' => 'didwndckd@gmail.com' }
-  s.source           = { :git => 'https://github.com/JoongChangYang/JCJoystick.git', :tag => s.version.to_s }
+  s.author           = { 'didwndckd' => 'didwndckd@gmail.com' }
+  s.source           = { :git => 'https://github.com/didwndckd/JCJoystick.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '12.0'
